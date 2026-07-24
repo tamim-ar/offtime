@@ -192,12 +192,23 @@ function populateSelectors(schedule) {
 
 function updateCountdown() {
   const now = new Date();
+  const startMinutes = timeToMinutes(currentSchedule.startTime);
+  const endMinutes = timeToMinutes(currentSchedule.endTime);
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+  if (isOfficeDay(now.getDay(), currentSchedule) && currentMinutes >= endMinutes) {
+    document.getElementById('clock').textContent = '00:00:00';
+    document.getElementById('progressFill').style.width = '100%';
+    return;
+  }
+
   const target = getNextTarget(now, currentSchedule);
   const remainingMs = Math.max(0, target.getTime() - now.getTime());
 
   document.getElementById('clock').textContent = formatCountdown(remainingMs);
   document.getElementById('progressFill').style.width = `${getProgressPercent(now)}%`;
 }
+
 
 function saveCurrentSettings() {
   const schedule = {
