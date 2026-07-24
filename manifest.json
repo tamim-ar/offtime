@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Offtime",
+  "description": "Track your daily countdown with a live badge and popup timer.",
+  "version": "1.0.0",
+  "minimum_chrome_version": "109",
+  "permissions": [
+    "alarms",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Offtime",
+    "default_popup": "popup.html"
+  }
+}

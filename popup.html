@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Offtime</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup-shell">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-badge">⏰</div>
+        <span>Offtime</span>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="themeBtn" class="icon-btn" type="button" title="Switch theme">☀</button>
+        <button id="settingsBtn" class="icon-btn" type="button" title="Open settings">⚙</button>
+      </div>
+    </div>
+
+    <div class="timer-card">
+      <div id="clock">00:00:00</div>
+      <div class="subtitle" id="scheduleSummary">Countdown to 7:00 PM</div>
+      <div class="progress-wrap">
+        <div class="progress-track">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="settingsPanel" class="settings-panel hidden">
+      <div class="field-grid">
+        <div class="field">
+          <label for="startDay">Start day</label>
+          <select id="startDay"></select>
+        </div>
+        <div class="field">
+          <label for="endDay">End day</label>
+          <select id="endDay"></select>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="startTime">Start time</label>
+          <input id="startTime" type="time" />
+        </div>
+        <div class="field">
+          <label for="endTime">End time</label>
+          <input id="endTime" type="time" />
+        </div>
+      </div>
+
+      <button id="saveBtn" class="save-btn" type="button">Save schedule</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
